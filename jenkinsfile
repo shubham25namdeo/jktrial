@@ -1,4 +1,4 @@
-import static groovy.json.JsonOutput.*
+Stepimport static groovy.json.JsonOutput.*
 import groovy.transform.Field
 
 public static final String PROD_MGMT_IP = "192.168.20.1"
@@ -13,10 +13,10 @@ pipeline {
             steps {
                 echo 'Building..'
            
-                String GET_DATA = sh (
+                step(String GET_DATA = sh (
                     script: 'cat aa.mk',
                     returnStdout: true
-                ).trim()
+                ).trim())
                 echo "data : ${GET_DATA}"
 
                 generate_data(PROD_MGMT_IP)
