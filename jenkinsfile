@@ -13,7 +13,8 @@ pipeline {
             steps {
                 echo 'Building..'
            
-                step(def GET_DATA = readFile "aa.mk")
+                sh "ls"
+                sh "pwd"
 
                 echo "data : ${GET_DATA}"
 
