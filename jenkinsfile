@@ -1,10 +1,10 @@
-public static final String PROD_IP = "192.168.2.1"
+public String prod = "192.168.2.1"
 
 
 generate_data()
 
 def generate_data() {
-    print(PROD_IP)
+    print(${prod})
     }
 
 def osc_release_version = readFileFromWorkspace(file: "aa.mk").tokenize("=").last().trim()
