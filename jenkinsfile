@@ -12,8 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-
-                GET_DATA = sh (
+           
+                String GET_DATA = sh (
                     script: 'cat aa.mk',
                     returnStdout: true
                 ).trim()
