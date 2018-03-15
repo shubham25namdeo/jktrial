@@ -14,7 +14,7 @@ pipeline {
                 echo 'Building..'
            
                 step(String GET_DATA = sh (
-                    script: 'cat ${PWD}aa.mk',
+                    script: 'cat ${PWD}\\aa.mk',
                     returnStdout: true
                 ).trim())
                 echo "data : ${GET_DATA}"
