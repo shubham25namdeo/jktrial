@@ -13,10 +13,8 @@ pipeline {
             steps {
                 echo 'Building..'
            
-                step(String GET_DATA = sh (
-                    script: 'cat .aa.mk',
-                    returnStdout: true
-                ).trim())
+                def GET_DATA = readFile "aa.mk"
+)
                 echo "data : ${GET_DATA}"
 
                 generate_data(PROD_MGMT_IP)
