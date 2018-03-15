@@ -9,6 +9,5 @@ generate_data(PROD_MGMT_IP)
 def generate_data(prod) {
     print(prod)
     }
-
-def osc_release_version = readFileFromWorkspace(file: "aa.mk").tokenize("=").last().trim()
-print(osc_release_version)
+String fileContents = new File('aa.mk').getText('UTF-8')
+print(fileContents)
