@@ -1,4 +1,4 @@
-Stepimport static groovy.json.JsonOutput.*
+import static groovy.json.JsonOutput.*
 import groovy.transform.Field
 
 public static final String PROD_MGMT_IP = "192.168.20.1"
