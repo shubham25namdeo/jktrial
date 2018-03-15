@@ -1,0 +1,2 @@
+def osc_release_version = readFileFromWorkspace(file: "aa.mk").tokenize("=").last().trim()
+print(osc_release_version)
