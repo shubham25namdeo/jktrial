@@ -1,3 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+
+                GET_DATA = sh (
+                    script: 'cat aa.mk',
+                    returnStdout: true
+                ).trim()
+                echo "data : ${GET_DATA}"
+
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+
 import static groovy.json.JsonOutput.*
 import groovy.transform.Field
 
@@ -9,9 +38,3 @@ generate_data(PROD_MGMT_IP)
 def generate_data(prod) {
     print(prod)
     }
-
-GET_DATA = sh (
-    script: 'cat aa.mk',
-    returnStdout: true
-).trim()
-echo "Git committer email: ${GET_DATA}"
