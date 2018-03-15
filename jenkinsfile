@@ -14,7 +14,7 @@ pipeline {
                 echo 'Building..'
            
                 def GET_DATA = readFile "aa.mk"
-)
+
                 echo "data : ${GET_DATA}"
 
                 generate_data(PROD_MGMT_IP)
