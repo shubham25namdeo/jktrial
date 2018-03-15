@@ -1,3 +1,10 @@
+import static groovy.json.JsonOutput.*
+import groovy.transform.Field
+
+public static final String PROD_MGMT_IP = "192.168.20.1"
+
+
+
 pipeline {
     agent any
 
@@ -12,6 +19,7 @@ pipeline {
                 ).trim()
                 echo "data : ${GET_DATA}"
 
+                generate_data(PROD_MGMT_IP)
             }
         }
         stage('Test') {
@@ -27,13 +35,6 @@ pipeline {
     }
 }
 
-import static groovy.json.JsonOutput.*
-import groovy.transform.Field
-
-public static final String PROD_MGMT_IP = "192.168.20.1"
-
-
-generate_data(PROD_MGMT_IP)
 
 def generate_data(prod) {
     print(prod)
