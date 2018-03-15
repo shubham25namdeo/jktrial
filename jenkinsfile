@@ -1,3 +1,4 @@
+
 import static groovy.json.JsonOutput.*
 import groovy.transform.Field
 
@@ -12,6 +13,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                def workspace = manager.build.getEnvVars()["WORKSPACE"]
+String fileContents = new File('${workspace}/aa.mk').text
+echo "${fileContents }"
                 generate_data(PROD_MGMT_IP)
             }
         }
