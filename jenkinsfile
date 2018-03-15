@@ -1,10 +1,10 @@
 import static groovy.json.JsonOutput.*
 import groovy.transform.Field
 
-def prod="192.168.2.1"
+public static final String PROD_MGMT_IP = "192.168.20.1"
 
 
-generate_data(prod)
+generate_data(PROD_MGMT_IP)
 
 def generate_data(prod) {
     print(prod)
