@@ -3,6 +3,21 @@ import static groovy.json.JsonOutput.*
 import groovy.transform.Field
 
 public static final String PROD_MGMT_IP = "192.168.20.1"
+def map = [
+    foo: 'bar',
+    bar: 'foo'
+]
+
+@NonCPS
+def entries(m) {
+    m.collect {k, v -> [k, v]}
+}
+
+def builders = [:]
+for (def e in entries(map)) {
+    echo e.key
+    echo e.value
+}
 
 
 node {
@@ -42,6 +57,10 @@ pipeline {
         )
             }
         }
+        stage {
+    parallel builders
+}
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
