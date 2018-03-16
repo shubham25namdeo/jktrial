@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                step(def workspace = load "aa.mk")
+                def workspace = load("aa.mk")
                 generate_data(PROD_MGMT_IP)
             }
         }
