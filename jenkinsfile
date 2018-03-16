@@ -7,6 +7,10 @@ public static final String PROD_MGMT_IP = "192.168.20.1"
 
 node {
   datas = readYaml file: 'release.yml'
+  def rootDir = pwd()
+  def example = load "${rootDir}@script/Example.Groovy "
+  example.exampleMethod()
+  example.otherExampleMethod()
 }
 pipeline {
     agent any
