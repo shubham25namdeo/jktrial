@@ -1,7 +1,7 @@
 def exampleMethod() {
     Set<Object> configs = [] as Set<Object>
     configs << "exampleMethod"
-    configs << "exampleMethod"
+    configs << "exampleMethod1"
     return configs
 }
 
