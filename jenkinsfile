@@ -19,20 +19,7 @@ node {
 
     example.exampleMethod()
     example.otherExampleMethod()
-    def map = [
-    foo: 'bar',
-    bar: 'foo'
-]
 
-def entries(m) {
-    m.collect {k, v -> [k, v]}
-}
-
-def builders = [:]
-for (def e in entries(map)) {
-    echo e.key
-    echo e.value
-}
 }
 pipeline {
     agent any
@@ -57,10 +44,7 @@ pipeline {
         )
             }
         }
-        stage {
-    parallel builders
-}
-
+        
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
