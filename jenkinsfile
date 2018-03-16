@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-            def branches = [:] 
+            step(def branches = [:] 
             for (int i = 0; i < 2; i++) {
             def index = i
           
@@ -42,6 +42,7 @@ pipeline {
                 echo 'done'
                 }
              }
+             parallel branches)
                  parallel (
             "Windows" : {
                 echo 'done'
@@ -50,7 +51,7 @@ pipeline {
                 echo 'done'
             }
         )
-        parallel branches
+        
             }
         }
         
