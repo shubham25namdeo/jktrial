@@ -32,7 +32,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                 parallel (
+            "Windows" : {
+                echo 'done'
+            },
+            "Linux" : {
+                echo 'done'
+            }
+        )
             }
         }
         stage('Deploy') {
