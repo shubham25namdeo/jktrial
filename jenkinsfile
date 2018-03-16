@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 step(env.WORKSPACE = pwd())
-                def version = readFile "${env.WORKSPACE}/version.txt"
+                step(def version = readFile "${env.WORKSPACE}/aa.mk")
                 generate_data(PROD_MGMT_IP)
             }
         }
