@@ -13,9 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                step(def workspace = manager.build.getEnvVars()["WORKSPACE"]
-String fileContents = new File('${workspace}/aa.mk').getText('UTF-8')
-echo "${fileContents }")
+                step(def workspace = load "aa.mk")
                 generate_data(PROD_MGMT_IP)
             }
         }
