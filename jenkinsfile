@@ -5,7 +5,9 @@ import groovy.transform.Field
 public static final String PROD_MGMT_IP = "192.168.20.1"
 
 
-
+node {
+  datas = readYaml file: 'release.yml'
+}
 pipeline {
     agent any
 
@@ -13,8 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                step(env.WORKSPACE = pwd())
-                step(def version = readFile "aa.mk")
+                echo "Got version as ${datas.version} "
                 generate_data(PROD_MGMT_IP)
             }
         }
