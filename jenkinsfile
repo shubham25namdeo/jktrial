@@ -34,6 +34,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+            def bq = ["Linux1" : 'done',"Linux2" : 'done'] 
                  parallel (
             "Windows" : {
                 echo 'done'
@@ -42,6 +43,7 @@ pipeline {
                 echo 'done'
             }
         )
+        parallel bq
             }
         }
         
