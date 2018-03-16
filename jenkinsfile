@@ -19,6 +19,14 @@ node {
 
     example.exampleMethod()
     example.otherExampleMethod()
+    def branches = [:] 
+    for (int i = 0; i < 2; i++) {
+      def index = i
+
+      branches["${index}"] = {
+          echo 'done'
+      }
+     }
 
 }
 pipeline {
@@ -34,15 +42,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-            step(def branches = [:] 
-            for (int i = 0; i < 2; i++) {
-            def index = i
-          
-            branches["${index}"] = {
-                echo 'done'
-                }
-             }
-             parallel branches)
+            step(parallel branches)
                  parallel (
             "Windows" : {
                 echo 'done'
