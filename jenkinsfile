@@ -17,7 +17,7 @@ node {
     // point to exact source file
     def example = load "${rootDir}\\Example.Groovy"
 
-    example.exampleMethod()
+    echo example.exampleMethod()
     example.otherExampleMethod()
     stage('abcd'){
       def branches = [:] 
