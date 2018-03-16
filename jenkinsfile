@@ -13,7 +13,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                def workspace = load("aa.mk")
+                step(env.WORKSPACE = pwd()
+                def version = readFile "${env.WORKSPACE}/version.txt")
                 generate_data(PROD_MGMT_IP)
             }
         }
