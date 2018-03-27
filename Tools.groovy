@@ -6,7 +6,7 @@ public class Demo {
      }
 
 
-    public void print_data(def script) {
+    public void print_data() {
         return message
     }
 }
