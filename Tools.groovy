@@ -6,7 +6,7 @@ public class Demo {
      }
 
 
-    public print_data(String message) {
+    public print_data() {
         println(message)
     }
 }
