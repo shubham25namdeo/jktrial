@@ -10,4 +10,5 @@ public class Demo {
     public void print(def script) {
         script.sh "echo " + message
     }
+}
 return new Demo() ;
