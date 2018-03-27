@@ -3,9 +3,11 @@ public class Demo {
 
      Demo(String message) {
         this.message=message;
+        print(this)
      }
 
 
     public void print(def script) {
         script.sh "echo " + message
     }
+return new Demo() ;
