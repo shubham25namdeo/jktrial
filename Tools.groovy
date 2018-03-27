@@ -11,4 +11,4 @@ public class Demo {
         script.sh "echo " + message
     }
 }
-return new Demo() ;
+return this
