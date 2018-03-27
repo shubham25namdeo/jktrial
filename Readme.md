@@ -1,6 +1,6 @@
 # Trial For Jenkinsfile
 
-One Paragraph of project description goes here
+One Paragraph of project description goes here.
 
 ## Getting Started
 
