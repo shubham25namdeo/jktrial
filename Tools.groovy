@@ -11,4 +11,8 @@ public class Demo {
         script.sh "echo " + message
     }
 }
+
+static Demo newSystemConfig(String m) {
+    return new Demo(m)
+}
 return this
