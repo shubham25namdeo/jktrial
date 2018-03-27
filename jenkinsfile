@@ -19,6 +19,7 @@ node {
     def tools = load "${rootDir}\\Tools.Groovy"
     def r = tools.newSystemConfig('HELLO!!!')
     r.print_data()
+    echo "${r}"
     def aa =  example.exampleMethod()
     echo "${aa}"
     example.otherExampleMethod()
