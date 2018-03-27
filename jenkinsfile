@@ -17,7 +17,7 @@ node {
     // point to exact source file
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
-    tools.Demo('HELLO!!!')
+    tools('HELLO!!!')
     def aa =  example.exampleMethod()
     echo "${aa}"
     example.otherExampleMethod()
