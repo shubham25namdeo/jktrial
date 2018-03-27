@@ -7,7 +7,7 @@ public class Demo {
 
 
     public void print_data(def script) {
-        script.sh "echo " + message
+        println(message)
     }
 }
 
