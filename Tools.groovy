@@ -7,7 +7,7 @@ public class Demo {
 
 
     public void print_data() {
-        return message
+        println(message)
     }
 }
 
