@@ -12,7 +12,7 @@ public class Demo {
     }
 }
 
-static Demo newSystemConfig(String m) {
+public Demo newSystemConfig(String m) {
     return new Demo(m)
 }
 return this
