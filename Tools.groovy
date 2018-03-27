@@ -3,7 +3,6 @@ public class Demo {
 
      Demo(String message) {
         this.message=message;
-        print_data(this.message)
      }
 
 
