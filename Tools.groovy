@@ -6,8 +6,8 @@ public class Demo {
      }
 
 
-    public print_data() {
-        println(message)
+    public void print_data(def script) {
+        script.sh "echo " + message
     }
 }
 
