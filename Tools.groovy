@@ -3,11 +3,12 @@ public class Demo {
 
      Demo(String message) {
         this.message=message;
+        print_data(this.message)
      }
 
 
-    public void print(def script) {
-        script.sh "echo " + message
+    public print_data(String message) {
+        println(message)
     }
 }
 
