@@ -17,7 +17,8 @@ node {
     // point to exact source file
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
-    tools.newSystemConfig('HELLO!!!')
+    def r = tools.newSystemConfig('HELLO!!!')
+    r.print_data()
     def aa =  example.exampleMethod()
     echo "${aa}"
     example.otherExampleMethod()
