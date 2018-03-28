@@ -16,6 +16,7 @@ node {
 
     // point to exact source file
     def version_file = load "${rootDir}\\version.mk"
+    echo "${version_file}"
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
     def r = tools.newSystemConfig('HELLO!!!',this)
