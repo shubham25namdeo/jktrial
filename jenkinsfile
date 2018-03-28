@@ -15,7 +15,7 @@ node {
     println("Current Directory: " + rootDir)
 
     // point to exact source file
-    def version_file = load "${rootDir}\\version.mk"
+    def version_file = readFile "${rootDir}\\version.mk"
     echo "${version_file}"
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
