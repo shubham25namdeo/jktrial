@@ -22,7 +22,7 @@ node {
       fin.push(split_file[n].split("=")[1])
     }
     // def fin = "${}.${split_file[1].split("=")[1].replaceAll("\r|\n","")}.${split_file[2].split("=")[1].replaceAll("\r|\n","")}"
-    echo "${fin}"
+    echo "${fin.join(".").replaceAll("\r|\n","")}"
     echo "${split_file}"
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
