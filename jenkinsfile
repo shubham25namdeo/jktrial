@@ -16,10 +16,11 @@ node {
 
     // point to exact source file
     def version_file = readFile "${rootDir}\\version.mk"
-    def split_file = version_file.split("=")
-    def kd = split_file[1..5]
+    def split_file = version_file.split("\n")
+    for (n in 0..2) {
+	   echo "${split_file[n]}"
+    }
     echo "${split_file}"
-    echo "${kd}"
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
     def r = tools.newSystemConfig('HELLO!!!',this)
