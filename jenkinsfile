@@ -16,7 +16,7 @@ node {
 
     // point to exact source file
     def version_file = readFile "${rootDir}\\version.mk"
-    def split_file = version_file.split("\n")
+    def split_file = version_file.split("\n").trim()
     def fin = "${split_file[0].split("=")[1]}.${split_file[1].split("=")[1]}.${split_file[2].split("=")[1]}"
     echo "${fin}"
     
