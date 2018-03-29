@@ -17,9 +17,9 @@ node {
     // point to exact source file
     def version_file = readFile "${rootDir}\\version.mk"
     def split_file = version_file.split("\n")
-    for (n in 0..2) {
-	   echo "${split_file[n]}"
-    }
+    def fin = "${split_file[0].split("=")[1]}.${split_file[1].split("=")[1]}.${split_file[2].split("=")[1]}"
+    echo "${fin}"
+    
     echo "${split_file}"
     def example = load "${rootDir}\\Example.Groovy"
     def tools = load "${rootDir}\\Tools.Groovy"
