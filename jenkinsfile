@@ -17,9 +17,7 @@ node {
     // point to exact source file
     def version_file = readFile "${rootDir}\\version.mk"
     def split_file = version_file.split("\n")
-    //def fin = (0..2).collect{split_file[it].split("=")[1]}.join(".").replaceAll("\r|\n","")
-    //echo "${fin}"
-    def fin = split_file.split("MAJOR"|"MINOR"|"PATCH")
+    def fin = (8..10).collect{split_file[it].split("=")[1]}.join(".").replaceAll("\r|\n","")
     echo "${fin}"
     echo "${split_file}"
     def example = load "${rootDir}\\Example.Groovy"
